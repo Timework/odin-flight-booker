@@ -1,0 +1,9 @@
+<h3>All Flights</h3>
+
+<%= form_for flights_path, method: :GET do |f|%>
+From: <%= f.select(:form_airport, @airports) %><br>
+To: <%= f.select(:to_airport, @airports) %><br>
+Time: <%= f.select(:date, @flight_times) %><br>
+Passengers: <%= f.select(:nil, @passengers) %><br>
+<%= f.submit %>
+<% end %>
