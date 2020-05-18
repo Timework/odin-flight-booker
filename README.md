@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a simple flight booking program made for this lesson : https://www.theodinproject.com/lessons/building-advanced-forms on the OdinProject.com.
+If you do not find any flights while searching that is because I did not populate that many flights in the seeds. Completed :05/18/2020
