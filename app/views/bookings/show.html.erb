@@ -1,0 +1,18 @@
+<h2>Booking</h2>
+<p>From<p>
+<%= @booking.flight.from_airport.code %>
+<br>
+<p>To<p>
+<%= @booking.flight.to_airport.code %>
+<br>
+<p>Depart Time<p>
+<%= @booking.flight.depart %>
+<br>
+<p>Passengers<p>
+<% @booking.passengers.each do |p| %>
+<%= p.name %>
+<br>
+<%= p.email %>
+<br>
+<% end %>
+ <%= link_to "Flight Search", flights_path %>

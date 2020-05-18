@@ -1,0 +1,24 @@
+<% if @results %>
+<% if @results.any? %>
+<h1> Results <h2>
+<%= form_for(@booking) do |f|%>
+<% @results.each do |result| %>
+<%= f.radio_button(:flight_id, result.id) %>
+<%= f.label("#{result.from_airport.code} to #{result.to_airport.code} at #{result.depart} duration: #{result.duration}")  %>
+<br>
+<% end %>
+<%= f.hidden_field(:amount_passengers, value:@pass)%>
+<% @booking.passengers.each do |pass| %>
+<%= f.fields_for :passengers, pass do |p| %>
+<%= p.label "Name"%>
+<%= p.text_field :name %>
+<br>
+<%= p.label "Email"%>
+<%= p.email_field :email %>
+<br>
+<% end %>
+<% end %>
+<%= f.submit %>
+<% end %>
+<% end %>
+<% end %>
