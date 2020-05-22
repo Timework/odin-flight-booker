@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
     def create
         @booking = Booking.new(booking_params)
-        @booking.save
+        if @booking.save
+        @booking.passengers.all.each do |p|
+            PassengerMailer.thank_you_email(p).deliver_now!
+        end
         redirect_to booking_path(@booking)
+    end
     end
 
     def show
